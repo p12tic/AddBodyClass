@@ -16,15 +16,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
-    Usage:
-
-    {{#addbodyclass|your_class}}
-
-    This will append 'your_class' to the contents of the `class' attribute of
-    <body> class. You can append multiple classes using
-    {{#addbodyclass|your_class1 your_class2 your_class3}}
-*/
 $wgExtensionCredits['parserhook'][] = array(
     'path'           => __FILE__,
     'name'           => 'AddBodyClass',
