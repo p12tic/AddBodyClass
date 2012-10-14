@@ -57,9 +57,12 @@ class AddBodyClass {
     static function on_output_before_html(&$out, &$text)
     {
         if (($found = strpos($text, 'ADD_BODY_CLASS_BEGIN')) !== false) {
-            if (preg_match("/ADD_BODY_CLASS_BEGIN (.*?) ADD_BODY_CLASS_END/", $text, $matches)) {
-                self::$classes .= ' '.$matches[1];
-                $text = str_replace($matches[0], "", $text);
+            if (preg_match_all("/ADD_BODY_CLASS_BEGIN (.*?) ADD_BODY_CLASS_END/",
+                               $text, $matches, PREG_SET_ORDER)) {
+                foreach ($matches as $m) {
+                    self::$classes .= ' '.$m[1];
+                    $text = str_replace($m[0], "", $text);
+                }
             }
         }
         return true;
