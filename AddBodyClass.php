@@ -22,6 +22,7 @@ $wgExtensionCredits['parserhook'][] = array(
     'author'         => 'p12',
     'descriptionmsg' => 'addbodyclass_desc',
     'url'            => 'https://github.com/p12tic/AddBodyClass',
+    'version'        => '1.1',
 );
 
 $wgExtensionMessagesFiles['AddBodyClassMagic'] = dirname( __FILE__ ) . '/' . 'AddBodyClass.i18n.magic.php';
