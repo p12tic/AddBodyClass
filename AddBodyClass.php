@@ -20,11 +20,12 @@ $wgExtensionCredits['parserhook'][] = array(
     'path'           => __FILE__,
     'name'           => 'AddBodyClass',
     'author'         => 'p12',
-    'descriptionmsg' => 'Add class attributes to the body tag ',
 //  'url'            => '',
+    'descriptionmsg' => 'addbodyclass_desc',
 );
 
 $wgExtensionMessagesFiles['AddBodyClassMagic'] = dirname( __FILE__ ) . '/' . 'AddBodyClass.i18n.magic.php';
+$wgExtensionMessagesFiles['AddBodyClass'] = dirname( __FILE__ ) . '/' . 'AddBodyClass.i18n.php';
 
 $wgHooks['ParserFirstCallInit'][] = 'AddBodyClass::setup';
 $wgHooks['OutputPageBodyAttributes'][] = 'AddBodyClass::add_attrs';
