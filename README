@@ -11,8 +11,8 @@ require_once("$IP/extensions/AddBodyClass/AddBodyClass.php");
   Usage
   =====
 
-{{#addbodyclass|your_class}}
+{{#addbodyclass:your_class}}
 
 This will append 'your_class' to the contents of the `class' attribute of
 <body> class. You can append multiple classes using
-{{#addbodyclass|your_class1 your_class2 your_class3}}
+{{#addbodyclass:your_class1 your_class2 your_class3}}
