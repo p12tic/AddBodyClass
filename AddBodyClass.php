@@ -1,6 +1,6 @@
 <?php
 /*
-    Copyright 2012 p12 <tir5c3@yahoo.co.uk>
+    Copyright 2012 Povilas Kanapickas <tir5c3@yahoo.co.uk>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 $wgExtensionCredits['parserhook'][] = array(
     'path'           => __FILE__,
     'name'           => 'AddBodyClass',
-    'author'         => 'p12',
+    'author'         => 'Povilas Kanapickas',
     'descriptionmsg' => 'addbodyclass_desc',
     'url'            => 'https://github.com/p12tic/AddBodyClass',
     'version'        => '1.1',
