@@ -2,11 +2,14 @@
   ===========
 
 This is a MediaWiki extension that allows one to add custom classes to the
-<body> html tag. No configuration is required, just add the following to your
-LocalSettings.php once the source of the extension is copied to the extensions/
-directory:
+<body> html tag. Just add the following to your LocalSettings.php once the
+source of the extension is copied to the extensions/ directory:
 
 require_once("$IP/extensions/AddBodyClass/AddBodyClass.php");
+
+Add this to disable the adding of categories to any pages classes:
+
+$wgCategoriesAsBodyClasses = false;
 
   Usage
   =====
@@ -16,3 +19,6 @@ require_once("$IP/extensions/AddBodyClass/AddBodyClass.php");
 This will append 'your_class' to the contents of the `class' attribute of
 <body> class. You can append multiple classes using
 {{#addbodyclass:your_class1 your_class2 your_class3}}
+
+Classes for each category are automatically added to the body with a
+'cat-' prefix.
