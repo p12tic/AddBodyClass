@@ -22,7 +22,7 @@ $wgExtensionCredits['parserhook'][] = array(
     'name'           => 'AddBodyClass',
     'author'         => 'Povilas Kanapickas & Will Stott',
     'descriptionmsg' => 'addbodyclass_desc',
-    'url'            => 'https://github.com/willstott101/AddBodyClass',
+    'url'            => 'https://github.com/p12tic/AddBodyClass',
     'version'        => '1.2',
 );
 
