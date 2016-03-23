@@ -6,10 +6,9 @@ This is a MediaWiki extension that allows one to add custom classes to the
 source of the extension is copied to the extensions/ directory:
 
 require_once("$IP/extensions/AddBodyClass/AddBodyClass.php");
+// Enable to automatically include a page's categories as body classes.
+// $wgCategoriesAsBodyClasses = true;
 
-Add this to disable the adding of categories to any pages classes:
-
-$wgCategoriesAsBodyClasses = false;
 
   Usage
   =====
@@ -17,8 +16,8 @@ $wgCategoriesAsBodyClasses = false;
 {{#addbodyclass:your_class}}
 
 This will append 'your_class' to the contents of the `class' attribute of
-<body> class. You can append multiple classes using
+<body> element. You can append multiple classes using
 {{#addbodyclass:your_class1 your_class2 your_class3}}
 
-Classes for each category are automatically added to the body with a
-'cat-' prefix.
+When `$wgCategoriesAsBodyClasses` is true, classes for each of a page's
+categories are automatically added to the body with a 'cat-' prefix.

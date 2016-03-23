@@ -33,7 +33,7 @@ $wgHooks['ParserFirstCallInit'][] = 'AddBodyClass::setup';
 $wgHooks['OutputPageBodyAttributes'][] = 'AddBodyClass::add_attrs';
 $wgHooks['OutputPageBeforeHTML'][] = 'AddBodyClass::on_output_before_html';
 
-$wgCategoriesAsBodyClasses = true;
+$wgCategoriesAsBodyClasses = false;
 
 class AddBodyClass {
 
