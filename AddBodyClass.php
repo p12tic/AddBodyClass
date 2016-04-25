@@ -1,6 +1,7 @@
 <?php
 /*
     Copyright 2012 Povilas Kanapickas <tir5c3@yahoo.co.uk>
+    Copyright 2016 Will Stott <willstott101@gmail.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -19,10 +20,10 @@
 $wgExtensionCredits['parserhook'][] = array(
     'path'           => __FILE__,
     'name'           => 'AddBodyClass',
-    'author'         => 'Povilas Kanapickas',
+    'author'         => 'Povilas Kanapickas & Will Stott',
     'descriptionmsg' => 'addbodyclass_desc',
     'url'            => 'https://github.com/p12tic/AddBodyClass',
-    'version'        => '1.1',
+    'version'        => '1.2',
 );
 
 $wgExtensionMessagesFiles['AddBodyClassMagic'] = dirname( __FILE__ ) . '/' . 'AddBodyClass.i18n.magic.php';
@@ -31,6 +32,8 @@ $wgExtensionMessagesFiles['AddBodyClass'] = dirname( __FILE__ ) . '/' . 'AddBody
 $wgHooks['ParserFirstCallInit'][] = 'AddBodyClass::setup';
 $wgHooks['OutputPageBodyAttributes'][] = 'AddBodyClass::add_attrs';
 $wgHooks['OutputPageBeforeHTML'][] = 'AddBodyClass::on_output_before_html';
+
+$wgCategoriesAsBodyClasses = false;
 
 class AddBodyClass {
 
@@ -72,8 +75,17 @@ class AddBodyClass {
 
     static function add_attrs($out, $sk, &$bodyAttrs)
     {
+        global $wgCategoriesAsBodyClasses;
+
         if (self::$classes !== '') {
             $bodyAttrs['class'] .= self::$classes;
+        }
+
+        if ($wgCategoriesAsBodyClasses) {
+            foreach ($out->getCategories() as $categoryName) {
+                $safeCategoryName = str_replace(array('.', ' '), '_', $categoryName);
+                $bodyAttrs['class'] .= ' cat-' . $safeCategoryName . ' icat-' . strtolower($safeCategoryName);
+            }
         }
         return true;
     }
