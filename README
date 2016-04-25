@@ -21,3 +21,4 @@ This will append 'your_class' to the contents of the `class' attribute of
 
 When `$wgCategoriesAsBodyClasses` is true, classes for each of a page's
 categories are automatically added to the body with a 'cat-' prefix.
+Along with a lowercase class prefixed with 'icat-'.
