@@ -83,7 +83,8 @@ class AddBodyClass {
 
         if ($wgCategoriesAsBodyClasses) {
             foreach ($out->getCategories() as $categoryName) {
-                $bodyAttrs['class'] .= ' cat-' . str_replace(array('.', ' '), '_', $categoryName);
+                $safeCategoryName = str_replace(array('.', ' '), '_', $categoryName);
+                $bodyAttrs['class'] .= ' cat-' . $safeCategoryName . ' icat-' . strtolower($safeCategoryName);
             }
         }
         return true;
