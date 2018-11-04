@@ -1,0 +1,29 @@
+{
+	"name": "AddBodyClass",
+	"version": "1.2",
+	"author": [
+		"Povilas Kanapickas",
+		"Will Stott"
+	],
+	"url": "http://www.mediawiki.org/wiki/Extension:AddBodyClass",
+	"descriptionmsg": "addbodyclass-desc",
+	"type": "parserhook",
+	"ExtensionMessagesFiles": {
+		"AddBodyClassMagic": "AddBodyClass.i18n.magic.php"
+	},
+	"MessagesDirs": {
+		"AddBodyClass": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"AddBodyClassHooks": "AddBodyClass.hooks.php"
+	},
+	"license-name": "GPL-2.0-or-later",
+	"Hooks": {
+		"ParserFirstCallInit": "AddBodyClassHooks::setup",
+		"OutputPageBodyAttributes": "AddBodyClassHooks::add_attrs",
+		"OutputPageBeforeHTML": "AddBodyClassHooks::on_output_before_html"
+	},
+	"manifest_version": 1
+}
